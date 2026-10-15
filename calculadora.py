@@ -1,13 +1,14 @@
 def calculadora():
-    print("=== Calculadora de Soma e Subtração ===")
+    print("=== Calculadora de Soma, Subtração e Multiplicação ===")
     print("1. Soma")
     print("2. Subtração")
+    print("3. Multiplicação (NOVO!)")
     
     # Solicita a escolha da operação
-    opcao = input("Escolha a operação (1 ou 2): ")
+    opcao = input("Escolha a operação (1, 2 ou 3): ")
     
-    if opcao not in ['1', '2']:
-        print("\nErro: Opção inválida. Escolha 1 ou 2.")
+    if opcao not in ['1', '2', '3']:
+        print("\nErro: Opção inválida. Escolha 1, 2 ou 3.")
         return
         
     try:
@@ -20,13 +21,18 @@ def calculadora():
             resultado = num1 + num2
             operacao_str = "soma"
             sinal = "+"
-        else:
+        elif opcao == '2':
             resultado = num1 - num2
             operacao_str = "subtração"
             sinal = "-"
+        else:
+            resultado = num1 * num2
+            operacao_str = "multiplicação"
+            sinal = "×"
             
         # Exibe o resultado formatado
         print(f"\nO resultado da {operacao_str} ({num1} {sinal} {num2}) é: {resultado}")
+        print("Obrigado por usar a nossa calculadora melhorada!")
         
     except ValueError:
         print("\nErro: Por favor, digite apenas números válidos.")
